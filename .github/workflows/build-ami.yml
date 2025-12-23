@@ -6,7 +6,7 @@ on:
       docker_image:
         description: 'Docker image to bake into AMI'
         required: true
-        default: 'drpowell23/fastapi-cicd:latest'
+        default: 'your-dockerhub-username/fastapi-cicd:latest'
       environment:
         description: 'Environment (dev, staging, prod)'
         required: false
@@ -65,7 +65,7 @@ jobs:
         run: |
           AMI_ID=$(jq -r '.builds[-1].artifact_id' manifest.json | cut -d':' -f2)
           echo "ami_id=$AMI_ID" >> $GITHUB_OUTPUT
-          echo "### AMI Build Complete! í¾‰" >> $GITHUB_STEP_SUMMARY
+          echo "### AMI Build Complete! ðŸŽ‰" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "**AMI ID:** \`$AMI_ID\`" >> $GITHUB_STEP_SUMMARY
           echo "**Region:** ${{ env.AWS_REGION }}" >> $GITHUB_STEP_SUMMARY
