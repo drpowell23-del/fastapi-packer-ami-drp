@@ -6,7 +6,7 @@ on:
       docker_image:
         description: 'Docker image to bake into AMI'
         required: true
-        default: 'your-dockerhub-username/fastapi-cicd:latest'
+        default: 'drpowell/fastapi-simple:latest'
       environment:
         description: 'Environment (dev, staging, prod)'
         required: false
